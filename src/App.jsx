@@ -2,6 +2,7 @@ import WelcomeMessage from './components/WelcomeMessage';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import UserProfile from './components/UserProfile';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -31,6 +32,10 @@ function App() {
         <WelcomeMessage />
         <Header />
       <MainContent />
+      {/* User Profile Card */}
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      <UserProfile name="Bob" age="30" bio="Enjoys coding and football" />
+      <UserProfile name="Clara" age="28" bio="Traveler and food blogger" />
       <Footer />
       </div>
       <p className="read-the-docs">
