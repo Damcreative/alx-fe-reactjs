@@ -3,9 +3,9 @@ import React from 'react'
 function MainContent() {
   return (
     <>
-        <main>
-            <p> I love to visit <span style={{ fontWeight: 'bold' }}>New York, Paris, and Tokyo.</span></p>
-        </main>
+          <main style={{ backgroundColor: 'grey', color: 'white', textAlign: 'center' }}>
+            <p>I love to visit New York, Paris, and Tokyo.</p>
+          </main>
     </>
   )
 }
