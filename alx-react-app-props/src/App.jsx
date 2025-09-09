@@ -1,5 +1,5 @@
 import React from 'react';
-import UserContext from './UserContext';
+import UserContext from './components/UserContext';
 import ProfilePage from "./components/ProfilePage";
 import Header from './components/Header';
 import Footer from './components/Footer';
