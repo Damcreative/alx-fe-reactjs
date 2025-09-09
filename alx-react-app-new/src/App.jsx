@@ -1,3 +1,4 @@
+import Counter from './components/Counter';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import MainContent from './components/MainContent'
@@ -10,6 +11,7 @@ function App() {
       <WelcomeMessage />
       <Header />
       <MainContent />
+      <Counter />
       <Footer />
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
     </>
