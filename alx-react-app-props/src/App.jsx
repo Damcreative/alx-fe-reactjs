@@ -16,7 +16,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
-      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      <UserProfile />
       <ProfilePage /> {/* 👈 no need to pass userData prop anymore */}
     </UserContext.Provider>
   );
