@@ -14,3 +14,6 @@ export const fetchAdvancedUserData = async (username, location, minRepos) => {
 
   return response.data.items; // returns list of users
 };
+
+// ✅ Export alias so Search.jsx and checker can still find it
+export const fetchUserData = fetchAdvancedUserData;
