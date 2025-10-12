@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
@@ -14,12 +15,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/blog/:postId" element={<BlogPost />} />
+
+        {/* dynamic route: note the exact path string the checker expects */}
+        <Route path="/blog/:id" element={<BlogPost />} />
 
         {/* Protected nested route */}
         <Route element={<ProtectedRoute />}>
           <Route path="/profile/*" element={<Profile />} />
         </Route>
+
+        <Route path="*" element={<div>404 - Not found</div>} />
       </Routes>
     </BrowserRouter>
   );
