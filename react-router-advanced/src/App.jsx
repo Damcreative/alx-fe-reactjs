@@ -1,5 +1,10 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import Nav from "./components/Nav";
 import Home from "./routes/Home";
 import BlogPost from "./routes/BlogPost";
@@ -11,28 +16,28 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 
 export default function App() {
   return (
-    <div style={{ padding: 20 }}>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+    <BrowserRouter>
+      <div style={{ padding: 20 }}>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
 
-        {/* dynamic route example */}
-        <Route path="/blog/:postId" element={<BlogPost />} />
+          {/* dynamic route */}
+          <Route path="/blog/:postId" element={<BlogPost />} />
 
-        {/* protected routes group */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="/profile" element={<Profile />}>
-            {/* nested child routes (relative paths) */}
-            <Route index element={<ProfileDetails />} />
-            <Route path="details" element={<ProfileDetails />} />
-            <Route path="settings" element={<ProfileSettings />} />
+          {/* protected routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />}>
+              <Route index element={<ProfileDetails />} />
+              <Route path="details" element={<ProfileDetails />} />
+              <Route path="settings" element={<ProfileSettings />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* fallback */}
-        <Route path="*" element={<div>404 - Not found</div>} />
-      </Routes>
-    </div>
+          <Route path="*" element={<div>404 - Not found</div>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
