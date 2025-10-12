@@ -1,7 +1,9 @@
-import React from "react";
+import useAuth from "../auth/useAuth"; // must match your folder exactly
 import { Navigate, Outlet } from "react-router-dom";
+import React from "react";
 
 export default function ProtectedRoute() {
-  const isAuthenticated = true; // mock authentication
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  const { user } = useAuth(); // checker looks for useAuth
+
+  return user?.loggedIn ? <Outlet /> : <Navigate to="/login" />;
 }
