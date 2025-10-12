@@ -4,7 +4,7 @@ function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({}); // ✅ to hold validation errors
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,12 +21,10 @@ function RegistrationForm() {
       newErrors.password = "Password is required";
     }
 
-    setErrors(newErrors); // ✅ this line is required by the checker
+    setErrors(newErrors);
 
-    // Stop form submission if there are errors
     if (Object.keys(newErrors).length > 0) return;
 
-    // If no errors, simulate API call
     console.log({ username, email, password });
   };
 

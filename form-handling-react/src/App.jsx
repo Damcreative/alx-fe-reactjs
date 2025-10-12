@@ -1,14 +1,9 @@
-// src/App.jsx
-import React from "react";
-import RegistrationForm from "./components/RegistrationForm";
-import FormikForm from "./components/FormikForm";
+import FormikForm from "./components/formikForm.jsx";
 
 function App() {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Form Handling Demo</h1>
-      <RegistrationForm />
-      <hr style={{ margin: "2rem 0" }} />
+      <h1>Form Handling Project</h1>
       <FormikForm />
     </div>
   );
