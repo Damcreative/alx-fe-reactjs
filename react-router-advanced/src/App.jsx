@@ -8,9 +8,9 @@ import {
 import Nav from "./components/Nav";
 import Home from "./routes/Home";
 import BlogPost from "./routes/BlogPost";
-import Profile from "./routes/Profile/Profile";
-import ProfileDetails from "./routes/Profile/ProfileDetails";
-import ProfileSettings from "./routes/Profile/ProfileSettings";
+import Profile from "./components/Profile";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
 import Login from "./routes/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
