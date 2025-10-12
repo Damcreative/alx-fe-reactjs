@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Home from "./routes/Home";
 import BlogPost from "./routes/BlogPost";
 import Login from "./routes/Login";
-import ProtectedRoute from "./routes/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./components/Profile";
 
 export default function App() {
