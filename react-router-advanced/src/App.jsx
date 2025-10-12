@@ -5,29 +5,22 @@ import Home from "./routes/Home";
 import BlogPost from "./routes/BlogPost";
 import Login from "./routes/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import Profile from "./components/Profile"; // <-- points to components/Profile.jsx
+import Profile from "./components/Profile";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div style={{ padding: 20 }}>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/blog/:postId" element={<BlogPost />} />
 
-          {/* dynamic route */}
-          <Route path="/blog/:postId" element={<BlogPost />} />
-
-          {/* Protected wrapper for /profile and its nested routes */}
-          <Route element={<ProtectedRoute />}>
-            {/* note the trailing /* so Profile's internal Routes can work */}
-            <Route path="/profile/*" element={<Profile />} />
-          </Route>
-
-          <Route path="*" element={<div>404 - Not found</div>} />
-        </Routes>
-      </div>
+        {/* Protected nested route */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/profile/*" element={<Profile />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
